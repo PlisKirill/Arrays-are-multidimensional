@@ -37,7 +37,6 @@ public class MultidimansionalArrays {
                         rotatedColors[j][CONST - i] = colors[i][j];
                     }
                 }
-                printResult(colors, rotatedColors);
                 break;
             case 2:
                 for (int i = 0; i < SIZE; i++) {
@@ -45,7 +44,6 @@ public class MultidimansionalArrays {
                         rotatedColors[CONST - i][CONST - j] = colors[i][j];
                     }
                 }
-                printResult(colors, rotatedColors);
                 break;
             case 3:
                 for (int i = 0; i < SIZE; i++) {
@@ -53,33 +51,30 @@ public class MultidimansionalArrays {
                         rotatedColors[CONST - j][i] = colors[i][j];
                     }
                 }
-                printResult(colors, rotatedColors);
                 break;
             default:
                 System.out.println("Вы ошиблись, такого пункта нет. Перезапустите программу!");
                 break;
         }
-    }
-
-    public static void printResult(int[][] colors, int[][] rotatadColors) {
         System.out.println("Дана следующая матрица:");
         System.out.println();
+        printResult(colors);
+        System.out.println();
+
+        System.out.println("Вывод:");
+        System.out.println();
+        printResult(rotatedColors);
+
+        System.out.println();
+        System.out.println("Программа завершена!");
+    }
+
+    public static void printResult(int[][] colors) {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++){
                 System.out.format("%4d", colors[i][j]);
             }
             System.out.println();
         }
-        System.out.println();
-        System.out.println("Вывод:");
-        System.out.println();
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++){
-                System.out.format("%4d", rotatadColors[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println();
-        System.out.println("Программа завершена!");
     }
 }
